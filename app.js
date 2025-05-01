@@ -9,13 +9,13 @@ async function fetchUser() {
         //now just extrct the user as response has many users we only want one
         const user=data.results[0];
 
-
+        //changing html elemnts by new json object obtained by apikey
         document.getElementById('user-photo').src=user.picture.medium;
         document.getElementById('user-name').textContent=`${user.name.first} ${user.name.last}`;
         document.getElementById('user-mailid').textContent=user.email;
         document.getElementById('country').textContent=user.location.country;
     }catch(error){
-        console.error('Failed to fetch',error);
+        console.error('Failed to fetch',error);     //popup window showing error
         alert('somethimg is wrong XXXXXX Try again XXXXX')
     }   
     
